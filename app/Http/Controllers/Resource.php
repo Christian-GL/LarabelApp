@@ -3,62 +3,72 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Activity;
 
 class Resource extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return 'manzana';
+        $activities = Activity::all();
+        return view('activities.view', compact('activities'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return 'manzana';
+        return view('activities.form');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        return 'manzana';
+        $validated = $request->validate([
+            'type' => 'required|in:surf,windsurf,kayak,atv,hot air balloon',
+            'user_id' => 'required|exists:users,id',
+            'datetime' => 'required|date',
+            'notes' => 'nullable|string',
+            'satisfaction' => 'nullable|integer|min:0|max:10',
+        ]);
+
+        $validated['paid'] = $request->has('paid');
+        $activity = Activity::create($validated);
+
+        return response()->json($activity, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        return 'manzana';
+        $activity = Activity::findOrFail($id);
+        return view('activities.view', compact('activity'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        return 'manzana';
+        $activity = Activity::findOrFail($id);
+        return view('activities.form', compact('activity'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        return 'manzana';
+        $activity = Activity::findOrFail($id);
+
+        $validated = $request->validate([
+            'type' => 'required|in:surf,windsurf,kayak,atv,hot air balloon',
+            'user_id' => 'required|exists:users,id',
+            'datetime' => 'required|date',
+            'paid' => 'boolean',
+            'notes' => 'nullable|string',
+            'satisfaction' => 'nullable|integer|min:0|max:10',
+        ]);
+
+        $activity->update($validated);
+
+        return response()->json($activity);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        return 'manzana';
+        $activity = Activity::findOrFail($id);
+        $activity->delete();
+
+        return response()->json(null, 204);
     }
 }
