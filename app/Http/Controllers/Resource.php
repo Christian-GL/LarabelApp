@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Activity;
 
-class Resource extends Controller
+class Resource
 {
     public function index()
     {

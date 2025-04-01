@@ -5,22 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class ContactController
 {
-    // Muestra la lista de todos los contactos.
     public function index()
     {
-        $contacts = Contact::all();
-        return response()->json($contacts);
+        return view('contact'); 
     }
 
-    // Muestra el formulario para crear un nuevo contacto. En un API normalmente no se usa, pero se deja para la estructura.
     public function create()
     {
         return response()->json(['message' => 'Mostrar formulario de creación de contacto']);
     }
 
-    // Almacena un nuevo contacto en la BD.
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -37,14 +33,12 @@ class ContactController extends Controller
         return response()->json($contact, 201);
     }
 
-    // Muestra los detalles de un contacto.
     public function show($id)
     {
         $contact = Contact::findOrFail($id);
         return response()->json($contact);
     }
 
-    // Muestra el formulario para editar un contacto existente.
     public function edit($id)
     {
         $contact = Contact::findOrFail($id);
@@ -54,7 +48,6 @@ class ContactController extends Controller
         ]);
     }
 
-    // Actualiza los datos de un contacto.
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -72,7 +65,6 @@ class ContactController extends Controller
         return response()->json($contact);
     }
 
-    // Elimina un contacto.
     public function destroy($id)
     {
         $contact = Contact::findOrFail($id);

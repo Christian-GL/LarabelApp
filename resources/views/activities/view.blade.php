@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Actividades</title>
-    <!-- <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
         }
@@ -45,7 +45,7 @@
             margin-bottom: 20px;
             font-weight: bold;
         }
-    </style> -->
+    </style>
 </head>
 
 <body>
@@ -99,19 +99,19 @@
                         <td>{{ $activity->notes }}</td>
                         <td>
                             <button onclick="location.href='{{ route('activities.show', $activity->id) }}'"
-                                >
+                                style="padding: 5px 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
                                 Ver
                             </button>
                             <button onclick="location.href='{{ route('activities.edit', $activity->id) }}'"
-                                >
+                                style="padding: 5px 10px; background-color: #28A745; color: white; border: none; border-radius: 5px; cursor: pointer;">
                                 Editar
                             </button>
                             <form action="{{ route('activities.destroy', $activity->id) }}" method="POST"
-                                >
+                                style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
-                                    >Eliminar</button>
+                                    style="padding: 5px 10px; background-color:rgb(238, 17, 17); color: white; border: none; border-radius: 5px; cursor: pointer;">Eliminar</button>
                             </form>
                         </td>
                     </tr>
