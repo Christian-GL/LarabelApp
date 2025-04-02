@@ -1,0 +1,7 @@
+@mixin introSeparator ($separatorDistanceRem: 0rem) {
+
+    display: inline-block;
+    margin: 0 $separatorDistanceRem;
+    height: 0.9rem;
+    border-left: 2px solid $color-black;
+}

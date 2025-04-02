@@ -1,0 +1,53 @@
+@import '../../styles/mixin/introSection.scss';
+
+@mixin facilities ($padding: 2em,
+    $introSectionTextAlign: left,
+    $facilitiesBackgroundColor: $color-darkBrown,
+    $ctnSliderBackgroundColor: $color-darkBrown2,
+    $colorLetterMayorTitleAndTitleText: $color-white,
+    $colorLetterMinorTitleAndText: $color-white) {
+
+    padding: $padding;
+
+    @include introSection($textAlign: $introSectionTextAlign,
+        $marginMayorTitle: 1rem 0 2rem,
+        $fontSizeMinorTitle: 0.75em,
+        $colorMinorTitle: $colorLetterMinorTitleAndText,
+        $fontSizeMayorTitle: 3em,
+        $colorMayorTitle: $colorLetterMayorTitleAndTitleText,
+        $backgroundColor: $facilitiesBackgroundColor);
+
+    &__ctn-slider {
+        position: relative;
+        padding: 1em 1em 3em;
+        text-align: left;
+        background-color: $ctnSliderBackgroundColor;
+
+        &__img-selectStars {
+            margin-top: 4rem;
+        }
+
+        &__img-numberSlider {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        &__title {
+            margin-top: 1rem;
+            font-family: $font-oldStandardTT;
+            font-size: 2em;
+            font-weight: 400;
+            color: $colorLetterMayorTitleAndTitleText;
+        }
+
+        &__text {
+            margin-top: 1rem;
+            font-family: $font-archivo;
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.75em;
+            color: $colorLetterMinorTitleAndText;
+        }
+    }
+}

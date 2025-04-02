@@ -1,0 +1,167 @@
+.contact {
+
+    &__intro {
+        padding: 4em 1em 0;
+        @include introSection($fontSizeMinorTitle: 0.75em,
+            $fontSizeMayorTitle: 3.5em,
+            $colorMinorTitle: $color-white,
+            $colorMayorTitle: $color-white,
+            $backgroundColor: $color-mediumBrown);
+        @include pageLocation($separatorDistanceRem: 0.25rem);
+
+        @include sidePaddingForDesktop();
+
+        @media only screen and (min-width: 1000px) {
+            padding-top: 8em;
+        }
+    }
+
+    &__ctn-contacts {
+        margin: 4rem 0;
+        padding: 0 2em;
+
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+            justify-content: space-around;
+            margin: 3rem 0 2rem;
+        }
+
+        &__ctn-entry {
+
+            @media only screen and (min-width: 1000px) {
+                flex: 1 1 0;
+            }
+
+            &--01 {
+                background-image: url('../../media/img/01.png')
+            }
+
+            &--02 {
+                background-image: url('../../media/img/02.png')
+            }
+
+            &--03 {
+                background-image: url('../../media/img/03.png')
+            }
+        }
+
+        @include contact($marginTop: 5rem,
+            $padding: 2.5em 0,
+            $marginTitleText: 1rem);
+
+        @media only screen and (min-width: 1000px) {
+            @include contact($marginTop: 5rem,
+                $padding: 2.5em 0,
+                $marginTitleText: 1rem,
+                $titleSize: 1em,
+                $textSize: 0.75em);
+        }
+
+        @include sidePaddingForDesktop;
+    }
+
+    &__img {
+        padding: 0 1em;
+        width: 100%;
+        height: auto;
+
+        @include sidePaddingForDesktop;
+    }
+
+    &__ctn-data {
+        margin: 4rem 0;
+        padding: 0 1em;
+
+        @media only screen and (min-width: 1000px) {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-flow: column;
+            grid-template-rows: auto;
+            margin: 6rem 0 1rem;
+        }
+
+        &__ctn-entry {
+            position: relative;
+
+            &__data {
+                margin: 1rem 0;
+                padding: 1.25em 1.5em 1.25em 2.5em;
+                width: 100%;
+                vertical-align: top;
+                font-family: $font-roboto;
+                font-size: 1.1em;
+                border: none;
+                outline: none;
+                background-color: $color-backgroundGray;
+
+                &--message {
+                    height: 10em;
+
+                    @media only screen and (min-width: 1000px) {
+                        height: 15em;
+                    }
+                }
+
+                @media only screen and (min-width: 1000px) {
+                    padding-left: 3.5em;
+                }
+            }
+
+            &__img {
+                position: absolute;
+                top: 2.5rem;
+                left: 1rem;
+                transform: scale(1.25);
+                pointer-events: none;
+
+                @media only screen and (min-width: 1000px) {
+                    left: 2rem;
+                }
+            }
+
+            @media only screen and (min-width: 1000px) {
+                &--name {
+                    margin: 0 1rem 0 4rem;
+                }
+
+                &--phone {
+                    margin: 0 1rem 0 4rem;
+                }
+
+                &--mail {
+                    margin: 0 4rem 0 1rem;
+                }
+
+                &--subject {
+                    margin: 0 4rem 0 1rem;
+                }
+
+                &--message {
+                    margin: 0 4rem;
+                    grid-row-start: 3;
+                    grid-row-end: 3;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
+            }
+        }
+
+        @include sidePaddingForDesktop;
+    }
+
+    &__ctn-btn {
+        text-align: center;
+
+        &__btn {
+            @include defaultButton($margin: 0 0 4rem, $sidePadding: 7.5em);
+
+            @media only screen and (min-width: 1000px) {
+                @include defaultButton($margin: 0 0 8rem, $sidePadding: 7.5em);
+            }
+        }
+
+        @include sidePaddingForDesktop;
+    }
+
+}

@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Contact;
 use App\Models\Room;
 use App\Models\Booking;
+use Database\Seeders\ActivitySeeder;  // Asegúrate de importar el ActivitySeeder
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,7 +44,7 @@ class DatabaseSeeder extends Seeder
                     "https://picsum.photos/seed/82bQ6spwAL/3443/324?blur=3",
                     "https://picsum.photos/seed/koaHxbj8/3508/1945?grayscale&blur=4"
                 ]),
-                'number' => '361',
+                'number' => '001',
                 'type' => 'Single Bed',
                 'amenities' => json_encode(["Minibar", "WiFi", "3 Bed Space"]),
                 'price' => 85150.41,
@@ -55,7 +56,7 @@ class DatabaseSeeder extends Seeder
                     "https://picsum.photos/seed/ee2ZHNgM02/2707/3299?grayscale&blur=4",
                     "https://picsum.photos/seed/koaHxbj8/3508/1945?grayscale&blur=4"
                 ]),
-                'number' => '202',
+                'number' => '002',
                 'type' => 'Suite',
                 'amenities' => json_encode(["WiFi"]),
                 'price' => 394.55,
@@ -68,7 +69,6 @@ class DatabaseSeeder extends Seeder
         }
 
         // Insertar datos en la tabla bookings
-        // Asumiremos que el room_id "1" existe en la tabla rooms
         $bookings = [
             [
                 'photo' => 'https://avatars.githubusercontent.com/u/2865354',
@@ -102,5 +102,8 @@ class DatabaseSeeder extends Seeder
         foreach ($bookings as $data) {
             Booking::create($data);
         }
+
+        // Llamada al seeder de actividades
+        $this->call(ActivitySeeder::class);  // Aquí se llama el ActivitySeeder
     }
 }

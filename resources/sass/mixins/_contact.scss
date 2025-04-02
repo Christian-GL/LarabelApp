@@ -1,0 +1,53 @@
+@mixin contact ($marginTop: 0rem,
+    $padding: 0em,
+    $paddingTopImg: 0em,
+    $marginCtnInfo: 0 0 0 1rem,
+    $colorText: $color-textGray,
+    $imgWidthHeight: auto,
+    $marginTitleText: 0rem,
+    $titleSize: 1.4em,
+    $textSize: 1em) {
+
+    &__ctn-entry {
+        position: relative;
+        margin-top: $marginTop;
+        padding: $padding;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &__img {
+            display: inline-block;
+            vertical-align: top;
+            padding-top: $paddingTopImg;
+            width: $imgWidthHeight;
+            height: $imgWidthHeight;
+        }
+
+        &__ctn-info {
+            display: inline-block;
+            margin: $marginCtnInfo;
+            width: 50%;
+
+            &__title {
+                margin-bottom: $marginTitleText;
+                font-family: $font-oldStandardTT;
+                font-size: $titleSize;
+                font-weight: 300;
+            }
+
+            &__text {
+                font-family: $font-roboto;
+                font-size: $textSize;
+                font-weight: 400;
+                color: $colorText;
+            }
+        }
+
+        &__img-arrow {
+            position: absolute;
+            top: 50%;
+            left: 17.5rem;
+        }
+    }
+}

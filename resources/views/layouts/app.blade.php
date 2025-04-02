@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<link rel="stylesheet" href="{{ asset('css/contactStyles.css')}}">
 
 <head>
     <meta charset="utf-8">
@@ -32,7 +33,7 @@
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
 
-        @include('layouts.navigation')
+        
         @include('layouts.header')
 
         <main>

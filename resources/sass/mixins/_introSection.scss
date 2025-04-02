@@ -1,0 +1,28 @@
+@mixin introSection ($textAlign: left,
+    $marginMayorTitle: 1rem 0 0,
+    $fontSizeMinorTitle: 1em,
+    $fontSizeMayorTitle: 4em,
+    $colorMinorTitle: $color-textGray,
+    $colorMayorTitle: $color-black,
+    $backgroundColor: $color-white) {
+
+    text-align: $textAlign;
+    background-color: $backgroundColor;
+
+    &__minor-title {
+        font-family: $font-archivo;
+        font-size: $fontSizeMinorTitle;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: $colorMinorTitle;
+    }
+
+    &__mayor-title {
+        margin: $marginMayorTitle;
+        font-family: $font-oldStandardTT;
+        font-size: $fontSizeMayorTitle;
+        font-weight: 400;
+        color: $colorMayorTitle;
+    }
+}

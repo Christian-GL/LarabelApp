@@ -1,0 +1,49 @@
+@mixin sliderButtons ($paddingSlider: 0em,
+    $prevTop: none,
+    $prevRight: none,
+    $prevBotton: none,
+    $prevLeft: none,
+    $nextTop: none,
+    $nextRight: none,
+    $nextBotton: none,
+    $nextLeft: none) {
+
+    position: relative;
+
+    .swiper-slide-active {
+        padding: $paddingSlider;
+    }
+
+    .swiper-button-prev {
+        position: absolute;
+        top: $prevTop;
+        right: $prevRight;
+        bottom: $prevBotton;
+        left: $prevLeft;
+        padding: 1em 1.35em;
+        background-size: 50px;
+        color: $color-black;
+        background-color: $color-white;
+    }
+
+    .swiper-button-prev::after {
+        font-size: 1rem;
+    }
+
+    .swiper-button-next {
+        position: absolute;
+        top: $nextTop;
+        right: $nextRight;
+        bottom: $nextBotton;
+        left: $nextLeft;
+        padding: 1em 1.35em;
+        background-size: 50px;
+        color: $color-white;
+        background-color: $color-lightBrown;
+    }
+
+    .swiper-button-next::after {
+        font-size: 1rem;
+    }
+
+}

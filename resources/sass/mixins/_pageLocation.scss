@@ -1,0 +1,35 @@
+@import '../../styles/mixin/introSeparator.scss';
+
+@mixin pageLocation ($widthContainer: 10rem,
+    $separatorDistanceRem: 0rem) {
+
+    &__location {
+        margin: 2rem 0 0 auto;
+        padding: 1em 0;
+        text-align: center;
+        width: $widthContainer;
+        background-color: $color-white;
+
+        &__previus-location {
+            display: inline-block;
+            text-decoration: none;
+            font-family: $font-archivo;
+            font-weight: 700;
+            color: $color-black;
+            cursor: pointer;
+        }
+
+        &__separator {
+            @include introSeparator($separatorDistanceRem)
+        }
+
+        &__actual-location {
+            display: inline-block;
+            font-family: $font-archivo;
+            font-weight: 700;
+            color: $color-lightBrown;
+            cursor: pointer;
+        }
+    }
+
+}

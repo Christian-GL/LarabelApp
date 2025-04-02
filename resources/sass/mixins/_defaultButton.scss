@@ -1,0 +1,19 @@
+@mixin defaultButton($margin: 2rem 0 0,
+    $sidePadding: 2.5em,
+    $border: none,
+    $textColor: $color-white,
+    $backgroundColor: $color-lightBrown) {
+
+    margin: $margin;
+    font-family: $font-archivo;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    padding: 1.75em $sidePadding;
+    border: $border;
+    color: $textColor;
+    background-color: $backgroundColor;
+}

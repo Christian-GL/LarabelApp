@@ -1,0 +1,375 @@
+@use './globalVars.scss' as *;
+
+@use './mixins/contact.scss' as *;
+@use './mixins/introSeparator.scss' as *;
+@use './mixins/sidePaddingForDesktop.scss' as *;
+
+.header {
+    position: relative;
+    background-color: $color-darkBrown;
+
+    &__introduction {
+        display: none;
+
+        @media only screen and (min-width: 1000px) {
+            display: block;
+            margin: 0 auto;
+            padding: 1em 0 5em;
+            width: 80%;
+            font-family: $font-roboto;
+            font-size: 0.75em;
+            font-weight: 400;
+            color: $color-white;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.25em 1em 0.75em;
+        background-color: $color-white;
+        box-shadow: 0 0.15rem 0.15rem $color-textLightGray2;
+
+        @media only screen and (min-width: 1000px) {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, 15%);
+            margin: 0 auto;
+            padding: 1.25em 1em 1em;
+            width: 80%;
+            box-shadow: none;
+        }
+
+        &__ctn-left {
+            display: inline-block;
+
+            &__ctn-img {
+                display: inline-block;
+                vertical-align: middle;
+                width: 4rem;
+
+                @media only screen and (min-width: 1000px) {
+                    width: 0rem;
+                }
+
+                &__img {
+                    margin: 0 auto 0 0;
+                    padding: 0.5em;
+                    cursor: pointer;
+
+                    &__hamburger {
+                        display: block;
+
+                        @media only screen and (min-width: 1000px) {
+                            display: none;
+                        }
+                    }
+
+                    &__X {
+                        display: none;
+                    }
+                }
+            }
+
+            &__ctn-returnHome {
+                display: inline-block;
+                text-decoration: none;
+                color: $color-black;
+                cursor: pointer;
+
+                &__icon-H {
+                    padding: 0.3em 0.5em;
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-family: $font-archivo;
+                    font-size: 1.25em;
+                    box-shadow: 0 0.10em 0.15em $color-shading, // bottom
+                        -0.1em 0.10em 0.5em $color-shading, // left
+                        0.1em 0.10em 0.5em $color-shading; // right
+
+                    @media only screen and (min-width: 1000px) {
+                        padding: 0.5em 0.7em;
+                        font-size: 1.75em;
+                    }
+                }
+
+                &__title {
+                    display: inline-block;
+                    margin-left: 1rem;
+                    vertical-align: middle;
+                    font-family: $font-archivo;
+                    font-size: 0.75em;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    font-weight: 400;
+
+                    @media only screen and (min-width: 1000px) {
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+
+        &__ctn-middle {
+            position: absolute;
+            top: 4.675rem;
+            left: 0;
+            width: 100%;
+            background-color: $color-white;
+
+            @media only screen and (min-width: 1000px) {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: auto;
+            }
+
+            &__menu {
+                display: none;
+                flex-direction: column;
+                list-style: none;
+                font-family: $font-archivo;
+                font-size: 0.8em;
+                font-weight: 700;
+
+                @media only screen and (min-width: 1000px) {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                &__option {
+                    padding: 1.15em;
+                    text-decoration: none;
+                    color: $color-black;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $color-textLightGray;
+                    }
+
+                    @media only screen and (min-width: 1000px) {
+                        margin-top: 0.7rem;
+                    }
+                }
+            }
+        }
+
+        &__ctn-right {
+
+            &__img {
+                padding: 0.4em;
+                cursor: pointer;
+
+                @media only screen and (min-width: 1000px) {
+                    margin-top: 0.35rem;
+                    margin-right: 1rem;
+                    padding: 0.6em;
+                    border: 2px solid $color-borderButtonGray;
+                }
+            }
+        }
+    }
+
+}
+
+.footer {
+    &__ctn-main {
+        padding: 4em 1em 1em;
+        background-image: url('../../media/icon/footerBackground.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include sidePaddingForDesktop($paddingSide: 10em);
+
+        @media only screen and (min-width: 1000px) {
+            display: grid;
+            grid-template-columns: 30% 40% 30%;
+            grid-gap: 2rem;
+
+            &__column1 {
+                grid-column: 1 / 2;
+            }
+
+            &__column2 {
+                grid-column: 2 / 3;
+            }
+
+            &__column3 {
+                grid-column: 3 / 4;
+            }
+        }
+
+        &__column1 {
+
+            &__ctn-title {
+                display: flex;
+                align-items: center;
+
+                &__icon-H {
+                    padding: 0.4em 0.6em;
+                    font-family: $font-archivo;
+                    font-size: 2.75em;
+                    color: $color-white;
+                    background-color: $color-lightBrown;
+                }
+
+                &__title {
+                    margin-left: 1.5rem;
+                    font-family: $font-archivo;
+                    font-size: 1.5em;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                }
+            }
+
+            &__text {
+                margin: 3rem 0 0;
+                font-family: $font-archivo;
+                font-size: 1em;
+                line-height: 1.5em;
+                color: $color-textGray;
+            }
+
+            &__nav {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 3rem;
+
+                @media only screen and (min-width: 1000px) {
+                    margin-top: 1.5rem;
+                }
+
+                &__icon {
+                    padding: 0.75em;
+                    text-align: center;
+                    width: 2.5rem;
+                    border-radius: 15%;
+                    color: $color-white;
+                    background-color: $color-textLightGray2;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $color-lightBrown;
+                    }
+                }
+            }
+        }
+
+        &__column2 {
+            &__services {
+                margin-top: 3rem;
+
+                @media only screen and (min-width: 1000px) {
+                    max-width: fit-content;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                &__title {
+                    margin-bottom: 1rem;
+                    font-family: $font-oldStandardTT;
+                    font-size: 1.5em;
+                    font-weight: 300;
+                }
+
+                &__list {
+                    display: grid;
+                    grid-template-rows: repeat(6, 1fr);
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-auto-flow: column;
+                    text-align: left;
+                    justify-content: center;
+                    column-gap: 2rem;
+
+                    &__option {
+                        padding: 1em 0;
+                        font-family: $font-roboto;
+                        list-style: none;
+                        color: $color-textGray;
+                    }
+                }
+            }
+        }
+
+        &__column3 {
+            &__contact {
+                margin-top: 3rem;
+
+                &__title {
+                    font-family: $font-oldStandardTT;
+                    font-size: 1.5em;
+                    font-weight: 300;
+                }
+
+                @include contact($marginTop: 4rem);
+
+                &__ctn-entry {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 1rem;
+
+                    @media only screen and (min-width: 1000px) {
+                        margin-top: 3rem;
+                    }
+
+                    &__img {
+                        margin-right: 0.5rem;
+                    }
+
+                    &__ctn-info {
+                        &__title {
+                            font-weight: bold;
+                        }
+
+                        &__text {
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__credits {
+        padding: 1em;
+        font-family: $font-roboto;
+        background-color: $color-backgroundGray;
+        @include sidePaddingForDesktop($paddingSide: 10em);
+
+        &__ctn-terms-policy {
+            margin-top: 1rem;
+
+            &__terms {
+                display: inline-block;
+            }
+
+            &__separator {
+                @include introSeparator(0.75rem);
+            }
+
+            &__policy {
+                display: inline-block;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.displayBlock {
+    display: block;
+}
+
+.displayNone {
+    display: none;
+}
+
+.displayFlex {
+    display: flex;
+}
