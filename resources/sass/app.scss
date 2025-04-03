@@ -1,4 +1,19 @@
 @use './globalVars.scss' as *;
-@use './layout.scss' as *;
+@use './mixins/index.scss' as *;
 
-@use './pages/contact/contactStyles.scss' as *;
+@use './layout.scss';
+@use './pages/contact/contact.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+}

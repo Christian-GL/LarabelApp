@@ -1,3 +1,5 @@
+@use '../globalVars.scss' as *;
+
 @mixin introSection ($textAlign: left,
     $marginMayorTitle: 1rem 0 0,
     $fontSizeMinorTitle: 1em,

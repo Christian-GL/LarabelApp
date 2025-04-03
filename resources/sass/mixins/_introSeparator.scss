@@ -1,3 +1,5 @@
+@use '../globalVars.scss' as *;
+
 @mixin introSeparator ($separatorDistanceRem: 0rem) {
 
     display: inline-block;

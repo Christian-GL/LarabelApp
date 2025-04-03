@@ -1,3 +1,12 @@
+@use '../../globalVars.scss' as *;
+
+@use '../../mixins/introSection.scss' as *;
+@use '../../mixins/pageLocation.scss' as *;
+@use '../../mixins/sidePaddingForDesktop.scss' as *;
+@use '../../mixins/contact.scss' as *;
+@use '../../mixins/defaultButton.scss' as *;
+
+
 .contact {
 
     &__intro {

@@ -1,4 +1,5 @@
-@import '../../styles/mixin/introSeparator.scss';
+@use '../globalVars.scss' as *;
+@use './introSeparator.scss' as *;
 
 @mixin pageLocation ($widthContainer: 10rem,
     $separatorDistanceRem: 0rem) {

@@ -1,3 +1,5 @@
+@use '../globalVars.scss' as *;
+
 @mixin sliderButtons ($paddingSlider: 0em,
     $prevTop: none,
     $prevRight: none,

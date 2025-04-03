@@ -1,3 +1,5 @@
+@use '../globalVars.scss' as *;
+
 @mixin roomInfo ($imgPadding: 0em,
     $optionsCtnPositionY: -60%,
     $marginCtnInfo: 3.5rem 0 0) {
